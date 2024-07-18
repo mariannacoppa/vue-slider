@@ -32,6 +32,11 @@ createApp({
             ]
         }
     },
+    created() {
+        setInterval(() => {
+            this.nextImage();
+        }, 3000);
+    },
     methods: {
         prevImage() {
             if (this.active_image == 0) {
