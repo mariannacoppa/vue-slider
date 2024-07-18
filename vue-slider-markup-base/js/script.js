@@ -34,9 +34,7 @@ createApp({
         }
     },
     created() {
-        this.autoscroll = setInterval(() => {
-            this.nextImage();
-        }, 3000);
+        this.startAutoscroll();
     },
     methods: {
         prevImage() {
@@ -57,6 +55,14 @@ createApp({
         },
         setThumbActive(index) {
             this.active_image = index;
+        },
+        startAutoscroll() {
+            this.autoscroll = setInterval(() => {
+                this.nextImage();
+            }, 3000);
+        },
+        stopAutoscroll() {
+            clearInterval(this.autoscroll);
         }
     }
 }).mount('#app');
