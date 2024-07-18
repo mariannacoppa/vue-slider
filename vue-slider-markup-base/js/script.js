@@ -48,6 +48,9 @@ createApp({
             else {
                 this.active_image++;
             }
+        },
+        setThumbActive(index) {
+            this.active_image = index;
         }
     }
 }).mount('#app');
